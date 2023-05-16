@@ -1,9 +1,4 @@
 #!/usr/bin/python
-"""
-@Author  :  Lijiawei
-@Date    :  2023/5/16 3:18 下午
-@Desc    :  test_persistent_queue line.
-"""
 import tempfile
 
 import pytest
