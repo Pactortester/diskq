@@ -33,7 +33,6 @@ jobs:
       run: >-
         python -m
         build
-        --user
         --sdist
         --wheel
         --outdir dist/
