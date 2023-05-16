@@ -37,6 +37,7 @@ jobs:
         --wheel
         --outdir dist/
         .
+        --user
     - name: Publish distribution 📦 to PyPI
       uses: pypa/gh-action-pypi-publish@master
       with:
