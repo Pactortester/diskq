@@ -12,8 +12,14 @@ def persistent_queue():
     temp_dir = tempfile.TemporaryDirectory()
     queue = PersistentQueue(f"{temp_dir.name}.pkl")
     yield queue
+    double_queue = PersistentQueue(f"{temp_dir.name}.pkl")
+    double_queue.task_done()
     # 清理临时文件
     temp_dir.cleanup()
+
+
+def test_task_done(persistent_queue):
+    persistent_queue.task_done()
 
 
 def test_put_and_get(persistent_queue):

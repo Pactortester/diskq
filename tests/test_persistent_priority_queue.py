@@ -12,6 +12,9 @@ def persistent_priority_queue():
     temp_dir = tempfile.TemporaryDirectory()
     queue = PersistentPriorityQueue(f"{temp_dir.name}.pkl")
     yield queue
+
+    double_queue = PersistentPriorityQueue(f"{temp_dir.name}.pkl")
+    double_queue.size()
     # 清理临时文件
     temp_dir.cleanup()
 
