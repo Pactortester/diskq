@@ -1,5 +1,4 @@
 #!/usr/bin/python
-
 import tempfile
 
 import pytest
