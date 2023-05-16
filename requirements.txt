@@ -1,0 +1,6 @@
+# Coverage-specific dependencies
+coverage
+pytest
+pytest-cov
+wheel
+dill
