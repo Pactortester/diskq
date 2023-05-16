@@ -10,7 +10,7 @@ name: Auto Publish Python 🐍 distributions 📦 to PyPI and TestPyPI
 
 on:
   push:
-    tags:        
+    tags:
       - v*
 
 jobs:
@@ -29,14 +29,18 @@ jobs:
         pip install
         build
         --user
+    - name: Install build wheel
+      run: pip install --user wheel
+    - name: Install build dependencies
+      run: pip install --user dill
+    - name: Check installed modules
+      run: pip list
+    - name: Init diskq project
+      run: pip install -e .
+    - name: Install dependencies
+      run: pip install -r requirements.txt
     - name: Build a binary wheel and a source tarball
-      run: >-
-        python -m
-        build
-        --sdist
-        --wheel
-        --outdir dist/
-        .
+      run: python setup.py sdist bdist_wheel
     - name: Publish distribution 📦 to PyPI
       uses: pypa/gh-action-pypi-publish@master
       with:
