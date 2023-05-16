@@ -30,9 +30,9 @@ jobs:
         build
         --user
     - name: Install build wheel
-      run: pip install --user wheel
+      run: python -m pip install wheel --user
     - name: Install build dependencies
-      run: pip install --user dill
+      run: python -m pip install dill --user
     - name: Build a binary wheel and a source tarball
       run: >-
         python -m
