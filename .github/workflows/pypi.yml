@@ -29,6 +29,10 @@ jobs:
         pip install
         build
         --user
+    - name: Install build wheel
+      run: pip install --user wheel
+    - name: Install build dependencies
+      run: pip install --user dill
     - name: Build a binary wheel and a source tarball
       run: >-
         python -m
