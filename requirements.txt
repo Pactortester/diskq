@@ -1,0 +1,4 @@
+# Coverage-specific dependencies
+coverage
+pytest
+pytest-cov
