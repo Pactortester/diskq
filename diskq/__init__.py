@@ -7,7 +7,3 @@ DiskQ supports three different types of queues: a regular queue, a priority queu
 It's easy to use and can help with various scenarios where data needs to be stored in a persistent way.
 """
 __version__ = "1.0.0"
-
-from .dqueue import PersistentQueue
-from .dqueue import PersistentPriorityQueue
-from .dqueue import PersistentLifoQueue
