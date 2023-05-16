@@ -8,7 +8,7 @@ import tempfile
 
 import pytest
 
-from diskq import PersistentLifoQueue
+from diskq.dqueue import PersistentLifoQueue
 
 
 @pytest.fixture
