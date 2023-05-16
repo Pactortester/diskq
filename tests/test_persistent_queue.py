@@ -1,13 +1,13 @@
 #!/usr/bin/python
-# encoding=utf-8
-
 """
 @Author  :  Lijiawei
 @Date    :  2023/5/16 3:18 下午
 @Desc    :  test_persistent_queue line.
 """
-import pytest
 import tempfile
+
+import pytest
+
 from diskq import PersistentQueue
 
 
@@ -23,21 +23,21 @@ def persistent_queue():
 
 def test_put_and_get(persistent_queue):
     # 测试队列的放入和取出操作
-    persistent_queue.put('item1')
-    persistent_queue.put('item2')
+    persistent_queue.put("item1")
+    persistent_queue.put("item2")
 
     item1 = persistent_queue.get()
     item2 = persistent_queue.get()
 
-    assert item1 == 'item1'
-    assert item2 == 'item2'
+    assert item1 == "item1"
+    assert item2 == "item2"
 
 
 def test_empty(persistent_queue):
     # 测试队列是否为空
     assert persistent_queue.empty()
 
-    persistent_queue.put('item1')
+    persistent_queue.put("item1")
     assert not persistent_queue.empty()
 
     persistent_queue.get()
@@ -48,9 +48,9 @@ def test_size(persistent_queue):
     # 测试队列的大小
     assert persistent_queue.size() == 0
 
-    persistent_queue.put('item1')
-    persistent_queue.put('item2')
-    persistent_queue.put('item3')
+    persistent_queue.put("item1")
+    persistent_queue.put("item2")
+    persistent_queue.put("item3")
 
     assert persistent_queue.size() == 3
 

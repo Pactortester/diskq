@@ -1,6 +1,4 @@
 #!/usr/bin/python
-# encoding=utf-8
-
 """
 DiskQ is a Python package that provides persistent queues and stacks,
 allowing users to store and retrieve data even after the program has terminated.
@@ -29,21 +27,20 @@ class PersistentQueue:
     """
 
     def __init__(self, filename):
-
         self.filename = os.path.join(filename)
         self.task_queue = self._read_queue_from_file()
         self.lock = threading.Lock()
 
     def _read_queue_from_file(self):
         try:
-            with open(self.filename, 'rb') as f:
+            with open(self.filename, "rb") as f:
                 return pickle.load(f)
         except (FileNotFoundError, EOFError):
             return []
 
     def _write_queue_to_file(self):
         with threading.Lock():
-            with open(self.filename, 'wb') as f:
+            with open(self.filename, "wb") as f:
                 pickle.dump(self.task_queue, f)
 
     def put(self, item):
@@ -84,7 +81,7 @@ class PersistentPriorityQueue:
         self.lock = threading.Lock()
         self.filename = os.path.join(filename)
         if os.path.exists(filename):
-            with open(filename, 'rb') as f:
+            with open(filename, "rb") as f:
                 self.queue = dill.load(f)
         else:
             self.queue = queue.PriorityQueue()
@@ -109,7 +106,7 @@ class PersistentPriorityQueue:
             return self.queue.qsize()
 
     def _write_queue_to_file(self):
-        with open(self.filename, 'wb') as f:
+        with open(self.filename, "wb") as f:
             dill.dump(self.queue, f)
 
 

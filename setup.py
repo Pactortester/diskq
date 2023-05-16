@@ -10,7 +10,16 @@ with open("README.md", encoding="utf-8") as f:
 setup(
     name="diskq",
     version=f"{__version__}",
-    keywords=["diskq", "queue", "persistentqueue", "persist", "disk", "pqueue", "diskqueue", "tools"],
+    keywords=[
+        "diskq",
+        "queue",
+        "persistentqueue",
+        "persist",
+        "disk",
+        "pqueue",
+        "diskqueue",
+        "tools",
+    ],
     description="DiskQ is a Python package that provides persistent queues using disk storage",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -33,7 +42,7 @@ setup(
         "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: Implementation :: CPython",
     ],
-    packages=find_packages(include=['diskq']),
+    packages=find_packages(include=["diskq"]),
     include_package_data=True,
     platforms="any",
     install_requires=[

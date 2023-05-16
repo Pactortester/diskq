@@ -1,13 +1,13 @@
 #!/usr/bin/python
-# encoding=utf-8
-
 """
 @Author  :  Lijiawei
 @Date    :  2023/5/16 3:20 下午
 @Desc    :  test_persistent_lifo_queue line.
 """
-import pytest
 import tempfile
+
+import pytest
+
 from diskq import PersistentLifoQueue
 
 
