@@ -2,4 +2,5 @@
 coverage
 pytest
 pytest-cov
+wheel
 dill
