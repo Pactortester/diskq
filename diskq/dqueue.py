@@ -1,5 +1,4 @@
 #!/usr/bin/python
-# encoding=utf-8
 """
 DiskQ is a Python package that provides persistent queues using disk storage.
 """
