@@ -9,7 +9,7 @@ on:
     types: [opened, reopened, synchronize]
 
 jobs:
-  test:
+  code_review:
     runs-on: ubuntu-latest
     steps:
       - uses: anc95/ChatGPT-CodeReview@main
@@ -21,3 +21,4 @@ jobs:
           MODEL:
           top_p: 1
           temperature: 1
+

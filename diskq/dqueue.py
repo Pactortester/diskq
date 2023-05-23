@@ -21,7 +21,7 @@ class PersistentQueue:
     """
 
     def __init__(self, filename):
-        self.filename = os.path.join(filename)
+        self.filename = filename
         self.task_queue = self._read_queue_from_file()
         self.lock = threading.Lock()
 
@@ -73,7 +73,7 @@ class PersistentPriorityQueue:
 
     def __init__(self, filename):
         self.lock = threading.Lock()
-        self.filename = os.path.join(filename)
+        self.filename = filename
         if os.path.exists(filename):
             with open(filename, "rb") as f:
                 self.queue = dill.load(f)
@@ -115,7 +115,7 @@ class PersistentLifoQueue:
 
     def __init__(self, filename):
         self.lock = threading.Lock()
-        self.filename = os.path.join(filename)
+        self.filename = filename
         self.stack = self._load_stack_from_file()
 
     def _load_stack_from_file(self):
