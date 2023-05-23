@@ -21,3 +21,9 @@ jobs:
           MODEL:
           top_p: 1
           temperature: 1
+          
+      - name: diffctx
+        uses: williamfzc/diffctx@v0.2.3
+        with:
+          lang: "python"
+          openai_api_key: ${{ secrets.OPENAI_API_KEY }}
